@@ -4,7 +4,7 @@
              x:Class="MauiApp1.MainPage">
 
     <ScrollView>
-        <Grid>
+        <Grid Margin="20">
             <Grid.RowDefinitions>
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*"/>
@@ -15,12 +15,25 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-            <Label Text="Мои списки"
-                   Grid.ColumnSpan="3"
-                   FontSize="35"
+            <Entry x:Name="entry"
+                   Placeholder="Введите задачу"
+                   TextChanged="OnEntryTextChanged"
+                   Completed="OnEntryCompleted"
+                   
+                   Grid.ColumnSpan="2"
+                   FontSize="28"
                    FontAttributes="Bold"
                    VerticalOptions="Center"
                    HorizontalOptions="Center"/>
+
+            <Button Text="Добавить"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Grid.Row="0"
+                Grid.Column="2"    
+                Clicked="OnButtonClicked" />
+
+            
 
             <Line X1="10"
                   X2="380"
