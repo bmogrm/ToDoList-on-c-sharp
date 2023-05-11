@@ -42,6 +42,10 @@
             <Button
                 x:Name="redButton"
                 x:DataType="viewModel:ViewModel"
+                
+                Command="{Binding changeCategory}"
+                CommandParameter="red"
+                
                 Margin="10"
                 BackgroundColor="#b81111"
                 Grid.Row="1"
@@ -49,6 +53,10 @@
             <Button
                 x:Name="greenButton"
                 x:DataType="viewModel:ViewModel"
+                
+                Command="{Binding changeCategory}"
+                CommandParameter="green"
+                
                 Margin="10"
                 BackgroundColor="#8cb42f"
                 Grid.Row="1"
@@ -56,6 +64,10 @@
             <Button
                 x:Name="blueButton"
                 x:DataType="viewModel:ViewModel"
+                
+                Command="{Binding changeCategory}"
+                CommandParameter="blue"
+                
                 Margin="10"
                 BackgroundColor="#499fdf"
                 Grid.Row="1"

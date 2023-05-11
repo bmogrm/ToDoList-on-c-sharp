@@ -15,23 +15,34 @@ namespace MauiApp1.ViewModel
         public event PropertyChangedEventHandler PropertyChanged;
         public ICommand createTask { get;  }
         public ICommand deleteTask { get; set; }
-        //public ICommand changeCategory { get; set; }
+        public ICommand changeCategory { get; set; }
 
         public ObservableCollection<Model.Model> ListTasks { get; set; } =
         new ObservableCollection<Model.Model>();
         public Model.Model task;
+        public Color colCategory;
 
         private void Create(string entry)
         {
-            var color = Color.FromRgb(1,2,3);
-            ListTasks.Add(new Model.Model() {TaskName = entry, Status = false, /*Category = color*/});
+            ListTasks.Add(new Model.Model() {TaskName = entry, Status = false, Category = colCategory});
+            colCategory = null;
         }
 
         private void Delete(Model.Model selTask) => ListTasks.Remove(selTask);
+        //public void ButColor()
+        //{
 
-        private void ChangeCategory()
+        //}
+
+        private void ChangeCategory(string text)
         {
-
+            colCategory = text switch
+            {
+                "red" => Colors.Red,
+                "green" => Colors.Green,
+                "blue" => Colors.Blue,
+                _ => colCategory
+            };
         }
 
         public async void EditTask()
@@ -61,7 +72,7 @@ namespace MauiApp1.ViewModel
             task = new Model.Model();
             createTask = new Command<string>(Create);
             deleteTask = new Command<Model.Model>(Delete);
-            //changeCategory = new Command<Model.Model>(ChangeCategory);
+            changeCategory = new Command<string>(ChangeCategory);
         }
 
         protected void OnPropertyChanged(string propertyName)
