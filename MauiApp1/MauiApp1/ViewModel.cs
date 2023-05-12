@@ -13,12 +13,13 @@ namespace MauiApp1.ViewModel
     class ViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        public ICommand createTask { get;  }
+        public ICommand createTask { get; }
         public ICommand deleteTask { get; set; }
         public ICommand changeCategory { get; set; }
 
         public ObservableCollection<Model.Model> ListTasks { get; set; } =
         new ObservableCollection<Model.Model>();
+
         public Model.Model task;
         public Color colCategory;
 
@@ -29,26 +30,50 @@ namespace MauiApp1.ViewModel
         }
 
         private void Delete(Model.Model selTask) => ListTasks.Remove(selTask);
-        //public void ButColor()
-        //{
-
-        //}
 
         private void ChangeCategory(string text)
         {
-            colCategory = text switch
+            ColButton = text switch
             {
-                "red" => Colors.Red,
-                "green" => Colors.Green,
-                "blue" => Colors.Blue,
-                _ => colCategory
+                "red" => Color.FromHex("#b81111"),
+                "green" => Color.FromHex("#8cb42f"),
+                "blue" => Color.FromHex("#499fdf"),
+                _ => ColButton
             };
+        }
+
+        public Color ColButton
+        {
+            get => colCategory;
+            set
+            {
+                colCategory = value;
+                OnPropertyChanged(nameof(ColButton));
+            }
         }
 
         public async void EditTask()
         {
-            string text = await Application.Current.MainPage.DisplayPromptAsync("Edditing", "Current task", initialValue: selectedTask.TaskName);
-            selectedTask.TaskName = text;
+            string switchCat = await Application.Current.MainPage.DisplayActionSheet("Выберите действие", "Отмена", "", "Сменить название", "Красная категория", "Зеленая категория", "Голубая категория))0)");
+            switch(switchCat)
+            {
+                case "Сменить название":
+                    string text = await Application.Current.MainPage.DisplayPromptAsync("Редактирование", "Введите новое название задачи", initialValue: selectedTask.TaskName);
+                    selectedTask.TaskName = text;
+                    break;
+                case "Красная категория":
+                    selectedTask.Category = Color.FromHex("#b81111");
+                    break;
+                case "Зеленая категория":
+                    selectedTask.Category = Color.FromHex("#8cb42f");
+                    break;
+                case "Голубая категория))0)":
+                    selectedTask.Category = Color.FromHex("#499fdf");
+                    break;
+                default:
+                    selectedTask = null;
+                    break;
+            }
             selectedTask = null;
         }
 

@@ -35,10 +35,10 @@
                 HorizontalOptions="Center"
                 Grid.Row="0"
                 Grid.Column="2"
+                    BackgroundColor="{Binding ColButton}"
                     x:DataType="viewModel:ViewModel"
                     Command="{Binding createTask}"
                     CommandParameter="{Binding Source={Reference entry}, Path=Text}"/>
-
             <Button
                 x:Name="redButton"
                 x:DataType="viewModel:ViewModel"
@@ -86,7 +86,7 @@
                 <ListView.ItemTemplate>
                     <DataTemplate x:DataType="model:Model">
                         <ViewCell>
-                            <ViewCell.View>
+                            <ViewCell.View Height="100">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
                                         <ColumnDefinition Width="50"/>
@@ -99,10 +99,11 @@
                                     </Grid.RowDefinitions>
                                     <CheckBox
                                         Grid.Column="0"
+                                        Grid.RowSpan="2"
                                         x:DataType="model:Model"
                                         IsChecked="{Binding Status}"/>
                                     <Label
-                                        
+                                        TextTransform="Default"
                                         Grid.Column="1"
                                         HorizontalTextAlignment="Start"
                                         VerticalOptions="Center"
@@ -112,14 +113,15 @@
                                     <ImageButton
                                         Grid.Column="2"
                                         Grid.RowSpan="2"
+                                        VerticalOptions="Center"
                                         Source="trashbin.png"
                                         x:DataType="viewModel:ViewModel"
                                         Command="{Binding Source= {RelativeSource AncestorType={x:Type viewModel:ViewModel}}, Path=deleteTask}"
                                         CommandParameter="{Binding}"/>
                                     <Label
-                                        Margin="5"
+                                        Margin="-5, 7,0,3"
                                         Grid.Row="1"
-                                        Grid.ColumnSpan="2"
+                                        Grid.Column="1"
                                         BackgroundColor="{Binding Category}"
                                         />
 
@@ -137,7 +139,7 @@
                   X2="380"
                   Stroke="Black"
                   Grid.ColumnSpan="3"
-                  Grid.Row="1"/>
+                  Grid.Row="4"/>
 
             <Line X1="10"
                   X2="380"

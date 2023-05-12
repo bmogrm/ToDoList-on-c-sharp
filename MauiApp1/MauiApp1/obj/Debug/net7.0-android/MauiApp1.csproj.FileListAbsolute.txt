@@ -956,6 +956,7 @@ C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-androi
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\lp\151\jl\files.cache
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\lp\153\jl\files.cache
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\lp\155\jl\files.cache
+C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\resizetizer\r\drawable\trashbin.png
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\android\assets\mscorlib.dll
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\android\assets\System.Collections.Concurrent.dll
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\android\assets\System.Data.Common.dll
@@ -969,4 +970,3 @@ C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-androi
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\android\assets\System.Runtime.Extensions.dll
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\android\assets\System.Runtime.Serialization.Formatters.dll
 C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\android\assets\System.Xml.dll
-C:\Rodion\Projects\ToDoList-on-c-sharp\MauiApp1\MauiApp1\obj\Debug\net7.0-android\resizetizer\r\drawable\trashbin.png

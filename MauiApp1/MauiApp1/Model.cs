@@ -14,21 +14,38 @@ namespace MauiApp1.Model
         private Color category;
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public string TaskName { get => taskName;
-            set { taskName = value;
-                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(TaskName)));
+        public string TaskName
+        {
+            get => taskName;
+            set 
+            { 
+                taskName = value;
+                OnPropertyChanged(nameof(TaskName));
             }
         }
 
-        public bool Status { get => status;
-            set { status = value;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Status)));
+        public bool Status
+        {
+            get => status;
+            set 
+            { 
+                status = value;
+                OnPropertyChanged(nameof(Status));
             } 
         }
 
-        public Color Category { get => category;
-        set { category = value;
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(nameof(Category)));}
+        public Color Category
+        {
+            get => category;
+            set
+            {
+                category = value;
+                OnPropertyChanged(nameof(Category));
+            }
+        }
+        protected void OnPropertyChanged(string propertyName)
+        {
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 
